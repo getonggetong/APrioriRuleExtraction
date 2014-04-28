@@ -27,19 +27,46 @@ def initDict(file):
     
     
 def aprioriAlgo():
-    global LList
-    L1 = LList[0]
-    #for (k = 2; Lk_1 != null; k++):
-    k = 2
-    while len(LList) >= k - 1:
-        #the number of L and the position it is stored in LList has a difference 1. e.g. L2 is stored in LList[1]
-        Lk_1 = LList[k - 1 - 1]
-        Ck = apriori_gen(Lk_1)#get new candidates set [<"pen, int", [1,2,6,9,56,...]>,<"...", [....]>,<...>,...]
-        # for each itemset in Ck
+	global LList
+	L1 = LList[0]
+	k = 2
+	while len(LList) >= k - 1:
+		#the number of L and the position it is stored in LList has a difference 1. e.g. L2 is stored in LList[1]
+		Lk_1 = LList[k - 1 - 1]
+		#get new candidates set [<"pen, int", [1,2,6,9,56,...]>,<"...", [....]>,<...>,...]
+		Ck = Apriori_Gen(Lk_1)
+		k += 1
 
-        k += 1
+def prune(key):
+	return True
 
+def diff(a,b):
+	for i in range(len(a)-1):
+		if(a[i]!=b[i]):
+			return False
+	if(a[len(a)-1] < b[len(a) - 1]):
+		return True
 
+def merge(L,oldwords,word):
+	global LList
+	L1 = LList[0]
+	oldList = L.get(oldwords)
+	tmpList = L1.get(word)
+	return list(set(oldList+tmpList)) 
+
+def Apriori_Gen(L):
+	C = {};
+	for k1 in L.keys():
+		p = k1.split(",")
+		for k2 in L.keys():
+			q = k2.split(",")
+			if(p!=q):
+				if(diff(p,q)):
+					key = p
+					key.append(q[len(q)-1])
+					if(prune(key)):
+						C[key] = merge(L,p,q[len(q)-1])
+	return C
 
 def main():
     global LList
@@ -62,9 +89,5 @@ def main():
     LList.append(L1)
     print L1
 
-    # aprioriAlgo()
-
-
-    
 if __name__ == "__main__":
     main()
