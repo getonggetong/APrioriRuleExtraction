@@ -1,3 +1,5 @@
+#!/usr/bin/python
+import itertools
 import csv
 
 csvFileName = 'DYCD_after-school_programs.csv'
@@ -37,9 +39,7 @@ def aprioriAlgo():
 		Ck = Apriori_Gen(Lk_1)
 		k += 1
 
-def prune(key):
-	return True
-
+# Compare a,b if only the last element differs 
 def diff(a,b):
 	for i in range(len(a)-1):
 		if(a[i]!=b[i]):
@@ -47,26 +47,41 @@ def diff(a,b):
 	if(a[len(a)-1] < b[len(a) - 1]):
 		return True
 
+# Merge list 
 def merge(L,oldwords,word):
-	global LList
-	L1 = LList[0]
-	oldList = L.get(oldwords)
-	tmpList = L1.get(word)
-	return list(set(oldList+tmpList)) 
+	global L1
+	oldList = L[oldwords]
+	tmpList = L1[word]
 
-def Apriori_Gen(L):
+	return list(set(oldList).intersection(set(tmpList))) 
+
+# Apriori algorithm
+def Apriori(L):
 	C = {};
-	for k1 in L.keys():
-		p = k1.split(",")
-		for k2 in L.keys():
-			q = k2.split(",")
+	keys = []
+	for k in L.keys():
+		keys.append(k.split(','))
+
+	#Join 
+	for p in keys:
+		for q in keys:
 			if(p!=q):
+				# test if p,q differ only in the last word
 				if(diff(p,q)):
-					key = p
-					key.append(q[len(q)-1])
-					if(prune(key)):
-						C[key] = merge(L,p,q[len(q)-1])
+					newItem = p[:]
+					newItem.append(q[len(q)-1])
+					# prune stage
+					if(prune(keys,newItem)):
+						# Merge the transactions in common
+						C[','.join(newItem)] = merge(L , ','.join(p), q[len(q)-1])
 	return C
+
+def prune(keys, newItem):
+	# subset of length k-1 
+	for subitem in list(itertools.combinations(newItem, len(newItem)-1)):
+		if sorted(list(subitem)) not in keys:
+			return False
+	return True
 
 def main():
     global LList
