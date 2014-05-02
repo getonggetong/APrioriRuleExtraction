@@ -1,0 +1,61 @@
+==Frequent itemsets (min_sup=3.0000%)
+[Department of Housing Preservation and Development], 42.8933%
+[BROOKLYN], 28.9188%
+[BRONX], 19.9572%
+[HEATING], 19.3224%
+[Department of Housing Preservation and Development, HEATING], 19.3187%
+[Department of Transportation], 17.8380%
+[NEW YORK], 17.6715%
+[Department of Housing Preservation and Development, BROOKLYN], 14.4893%
+[BRONX, Department of Housing Preservation and Development], 14.1212%
+[New York City Police Department], 10.0608%
+[Department of Housing Preservation and Development, NEW YORK], 8.6566%
+[Street Condition], 7.6607%
+[Department of Transportation, Street Condition], 7.6607%
+[Department of Environmental Protection], 7.4322%
+[BRONX, HEATING], 6.9139%
+[Department of Housing Preservation and Development, BRONX, HEATING], 6.9131%
+[BROOKLYN, HEATING], 6.0188%
+[Department of Housing Preservation and Development, BROOKLYN, HEATING], 6.0182%
+[PLUMBING], 5.0860%
+[PLUMBING, Department of Housing Preservation and Development], 5.0838%
+[STATEN ISLAND], 4.7654%
+[Department of Buildings], 4.3510%
+[Street Light Condition], 4.2140%
+[Department of Transportation, Street Light Condition], 4.2140%
+[Department of Transportation, BROOKLYN], 4.1685%
+[NEW YORK, HEATING], 4.0913%
+[Department of Housing Preservation and Development, NEW YORK, HEATING], 4.0889%
+[Blocked Driveway], 3.8818%
+[New York City Police Department, Blocked Driveway], 3.8818%
+[GENERAL CONSTRUCTION], 3.3797%
+[Department of Housing Preservation and Development, GENERAL CONSTRUCTION], 3.3797%
+[BROOKLYN, New York City Police Department], 3.3483%
+
+==High-confidence association rules (min_conf=30.0000%)
+[Blocked Driveway] => [New York City Police Department] (Conf: 100.0000%, Supp: 3.8818%)
+[Street Light Condition] => [Department of Transportation] (Conf: 100.0000%, Supp: 4.2140%)
+[GENERAL CONSTRUCTION] => [Department of Housing Preservation and Development] (Conf: 100.0000%, Supp: 3.3797%)
+[Street Condition] => [Department of Transportation] (Conf: 100.0000%, Supp: 7.6607%)
+[BROOKLYN, HEATING] => [Department of Housing Preservation and Development] (Conf: 99.9901%, Supp: 6.0182%)
+[BRONX, HEATING] => [Department of Housing Preservation and Development] (Conf: 99.9885%, Supp: 6.9131%)
+[HEATING] => [Department of Housing Preservation and Development] (Conf: 99.9805%, Supp: 19.3187%)
+[PLUMBING] => [Department of Housing Preservation and Development] (Conf: 99.9572%, Supp: 5.0838%)
+[NEW YORK, HEATING] => [Department of Housing Preservation and Development] (Conf: 99.9419%, Supp: 4.0889%)
+[BRONX] => [Department of Housing Preservation and Development] (Conf: 70.7578%, Supp: 14.1212%)
+[BROOKLYN] => [Department of Housing Preservation and Development] (Conf: 50.1034%, Supp: 14.4893%)
+[NEW YORK] => [Department of Housing Preservation and Development] (Conf: 48.9861%, Supp: 8.6566%)
+[Department of Housing Preservation and Development, BRONX] => [HEATING] (Conf: 48.9555%, Supp: 6.9131%)
+[Department of Housing Preservation and Development, NEW YORK] => [HEATING] (Conf: 47.2349%, Supp: 4.0889%)
+[Department of Housing Preservation and Development] => [HEATING] (Conf: 45.0388%, Supp: 19.3187%)
+[Department of Transportation] => [Street Condition] (Conf: 42.9461%, Supp: 7.6607%)
+[Department of Housing Preservation and Development, BROOKLYN] => [HEATING] (Conf: 41.5358%, Supp: 6.0182%)
+[New York City Police Department] => [Blocked Driveway] (Conf: 38.5835%, Supp: 3.8818%)
+[Department of Housing Preservation and Development, HEATING] => [BRONX] (Conf: 35.7847%, Supp: 6.9131%)
+[HEATING] => [BRONX] (Conf: 35.7818%, Supp: 6.9139%)
+[BRONX] => [HEATING] (Conf: 34.6438%, Supp: 6.9139%)
+[Department of Housing Preservation and Development] => [BROOKLYN] (Conf: 33.7798%, Supp: 14.4893%)
+[New York City Police Department] => [BROOKLYN] (Conf: 33.2802%, Supp: 3.3483%)
+[Department of Housing Preservation and Development] => [BRONX] (Conf: 32.9218%, Supp: 14.1212%)
+[Department of Housing Preservation and Development, HEATING] => [BROOKLYN] (Conf: 31.1525%, Supp: 6.0182%)
+[HEATING] => [BROOKLYN] (Conf: 31.1495%, Supp: 6.0188%)
