@@ -1,13 +1,9 @@
 #!/usr/bin/python
+import sys
 import itertools
 import csv
+import operator
 
-# csvFileName = 'DYCD_after-school_programs.csv'
-csvFileName = "NYC_City_Hall_Library_Publications.csv"
-numberRecords = 0
-min_sup = 0.3
-min_conf = 0.8
-LList = []	#list of L1,L2,...,Lk
 
 # Build initial dictionary
 def initDict(file):
@@ -19,6 +15,7 @@ def initDict(file):
     #TO-DO:
     # Pay attention to the first line of csv , spaces 
     for row in csvreader:
+        numberRecords += 1
         for item in row:
         	# eliminate the space
         	if item != '':
@@ -28,7 +25,6 @@ def initDict(file):
 	            	# Check for duplicate row number
 	                initDict[item].append(numberRecords)
         #increase the number of records by one for further support/confidence calculation 
-        numberRecords += 1
     return initDict
     
 # Main a-priori algorithm
@@ -122,10 +118,11 @@ def Rule_gen():
 					LHS = ';'.join(temp)
 					LHSList = prevLk[LHS]
 					if(Conf(LHSList,RHSList) >= min_conf):
-						print LHS, " => ", RHS, "conf:", Conf(LHSList,RHSList), "sup:", float(len(Lk[key]))/numberRecords
-						Rule[LHS] = RHS
+						tmpkey = LHS + "=>" + RHS
+						Rule[tmpkey] = [Conf(LHSList,RHSList), float(len(Lk[key]))/numberRecords]
 		prevLk = Lk
 	return Rule
+
 # Given the LHS, RHS, compute the confidency
 def Conf(LHSList,RHSList):
 	intesectLen = len(set(LHSList).intersection(set(RHSList)))
@@ -152,12 +149,48 @@ def main():
     #add L1 to the L list
     LList.append(L1)
     aprioriAlg()
+
+    # Output the result
+    print '==Frequent itemsets (min_sup=', min_sup*100, '%)'
+    freqSet = {}
+    for Lk in LList:
+    	for freqItem in Lk:
+    		freqSet[freqItem] = len(Lk[freqItem])
+
+    sorted_freqSet = sorted(freqSet.iteritems(),key = operator.itemgetter(1),reverse=True)
+    for freqItem in sorted_freqSet:
+    	print '[',
+    	print ','.join(freqItem[0].split(';')),
+    	print '],',
+    	print float(freqItem[1])/numberRecords * 100 , '%' 
+
+    print
+
+    print '==High-confidence association rules (min_conf=', min_conf*100,'%)'
 	# From LList to generate the association 
     Association_Rule = Rule_gen()
 
-    # # Print the result
-    # for key in Association_Rule:
-    # 	print key.split(";"), " => ", Association_Rule[key], "conf:", 
+    # Print the association rule
 
+    sorted_rule = {}
+    for RULE in Association_Rule.keys():
+    	sorted_rule[RULE] = Association_Rule[RULE][0]
+
+    sorted_rule = sorted(sorted_rule.iteritems(), key = operator.itemgetter(1), reverse =True)
+
+    for pair in sorted_rule:
+    	RuleName = pair[0].split('=>')
+    	LHS = ','.join(RuleName[0].split(';'))
+    	RHS = RuleName[1]
+    	conf = pair[1]
+    	support = Association_Rule[pair[0]][1]
+    	print '[',LHS,']','=>','[',RHS,']','(Conf:',conf*100,'%,','Supp:',support*100,'%)'
+
+# Global variable, stdinput
 if __name__ == "__main__":
-    main()
+	csvFileName = "INTEGRATED-DATASET.csv"
+	numberRecords = 0
+	min_sup = 0.2
+	min_conf = 0.8
+	LList = []	#list of L1,L2,...,Lk
+	main()
