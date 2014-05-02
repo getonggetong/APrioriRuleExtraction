@@ -3,6 +3,7 @@ import sys
 import itertools
 import csv
 import operator
+import argparse
 
 
 # Build initial dictionary
@@ -150,6 +151,10 @@ def main():
     LList.append(L1)
     aprioriAlg()
 
+    prevStdout = sys.stdout
+    output = open('output.txt','w')
+    sys.stdout = output
+
     # Output the result
     print '==Frequent itemsets (min_sup=', min_sup*100, '%)'
     freqSet = {}
@@ -186,11 +191,28 @@ def main():
     	support = Association_Rule[pair[0]][1]
     	print '[',LHS,']','=>','[',RHS,']','(Conf:',conf*100,'%,','Supp:',support*100,'%)'
 
+    output.close()
+    sys.stdout = prevStdout
+
 # Global variable, stdinput
 if __name__ == "__main__":
-	csvFileName = "INTEGRATED-DATASET.csv"
+	parser = argparse.ArgumentParser(description='<Usage> ./run.sh -sup min_sup -conf min_conf -data dataset')
+	parser.add_argument('-sup',dest='min_sup',help="<min_support>")
+	parser.add_argument('-conf',dest='min_conf',help="<min_confidence>")
+	parser.add_argument('-data',dest='csvdata',help="<dataset file name>")
+	args = parser.parse_args(sys.argv[1:])
+
+	# Global variables
 	numberRecords = 0
+	LList = []	#list of L1,L2,...,Lk
+	csvFileName = "INTEGRATED-DATASET.csv"
 	min_sup = 0.2
 	min_conf = 0.8
-	LList = []	#list of L1,L2,...,Lk
+	if(args.min_sup!=None):
+		min_sup = args.min_sup
+	if(args.min_conf!=None):
+		min_conf = args.min_conf
+	if(args.csvdata!=None):
+		csvFileName = args.csvdata
+	
 	main()

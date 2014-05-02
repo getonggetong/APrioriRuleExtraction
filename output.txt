@@ -1,0 +1,20 @@
+==Frequent itemsets (min_sup= 20.0 %)
+[ Housing and Buildings ], 36.8154158215 %
+[ Legislative Document ], 36.3488843813 %
+[ Finance and Budget ], 31.3995943205 %
+[ Housing and Buildings,Legislative Document ], 30.6490872211 %
+[ City Planning ], 30.2839756592 %
+[ City Planning,Legislative Document ], 29.7363083164 %
+[ City Planning,Housing and Buildings ], 29.6551724138 %
+[ City Planning,Housing and Buildings,Legislative Document ], 29.4929006085 %
+
+==High-confidence association rules (min_conf= 80.0 %)
+[ City Planning,Housing and Buildings ] => [ Legislative Document ] (Conf: 99.4528043776 %, Supp: 29.4929006085 %)
+[ City Planning,Legislative Document ] => [ Housing and Buildings ] (Conf: 99.1814461119 %, Supp: 29.4929006085 %)
+[ City Planning ] => [ Legislative Document ] (Conf: 98.1915606162 %, Supp: 29.7363083164 %)
+[ City Planning ] => [ Housing and Buildings ] (Conf: 97.9236436705 %, Supp: 29.6551724138 %)
+[ Housing and Buildings,Legislative Document ] => [ City Planning ] (Conf: 96.2276637988 %, Supp: 29.4929006085 %)
+[ Legislative Document ] => [ Housing and Buildings ] (Conf: 84.3191964286 %, Supp: 30.6490872211 %)
+[ Housing and Buildings ] => [ Legislative Document ] (Conf: 83.2506887052 %, Supp: 30.6490872211 %)
+[ Legislative Document ] => [ City Planning ] (Conf: 81.8080357143 %, Supp: 29.7363083164 %)
+[ Housing and Buildings ] => [ City Planning ] (Conf: 80.5509641873 %, Supp: 29.6551724138 %)

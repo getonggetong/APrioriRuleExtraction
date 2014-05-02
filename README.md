@@ -11,4 +11,6 @@ the NYC Open Data site.
 
 Nothing
 
+(c) what makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)).
+
 You must explain in the README file precisely what variation(s) you have implemented and why
