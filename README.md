@@ -35,7 +35,7 @@ We expected to derive some interesting rules from the dataset, e.g., what's the 
 ==============
 
 ```
-> cd src
+> chmod +x run.sh [optional]
 > ./run.sh -o output -s min_sup -c min_conf -d dataset 
 
 usage: Main.py [-h] [-S MIN_SUP] [-C MIN_CONF] [-D CSVDATA] [-O OUTPUT]
@@ -57,6 +57,7 @@ e.g.,
 
 In default, the program will execute our INTEGRATED-DATASET.csv with min_support=0.2, min_confidence=0.8 and the result will be list in the terminal.
 
+If you want to change to other dataset, put the dataset in the **data** folder and specificy the argument in the command list.
 
 ###Internal Design
 ==================
