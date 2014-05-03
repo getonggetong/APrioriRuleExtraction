@@ -32,7 +32,6 @@ We expected to derive some interesting rules from the dataset, e.g., what's the 
 
 
 ###How to run
-==============
 
 ```
 > chmod +x run.sh [optional]
@@ -60,7 +59,6 @@ In default, the program will execute our INTEGRATED-DATASET.csv with min_support
 If you want to change to other dataset, put the dataset in the **data** folder and specificy the argument in the command list.
 
 ###Internal Design
-==================
 
 Internally, we implemented the original algorithm desribed in Section 2.1 of the Agrawal and Srikant paper in VLDB 1994 with minor modications. Our pseudocode, similar to section 2.1.1 are given below, here we omit the internal function of ```apriori-gen``` and ```FILTER```.
 
@@ -90,20 +88,23 @@ Moreover, our join procedure in ```apriori-gen``` is based on alphabetical order
 From the example-run.txt, we conclude that:
 
 #### Frequent itemsets
-1. The top 3 frequent agencies are:
-..1. [Department of Housing Preservation and Development], 54.14%
-..2. [Department of Transportation], 11.71%
-..3. [New York City Police Department], 10.56%
-
-2. The top 3 Borough are 
-..1. [BROOKLYN], 29.53%
-..2. [BRONX], 23.18%
-..3. [QUEENS], 20.50%
-
-3. The top 2 complaint types are:
-..1. [HEATING], 34.00%
-..2. [PLUMBING], 5.92%
-
+1.The top 3 frequent agencies are:
+```
+[Department of Housing Preservation and Development], 54.14%
+[Department of Transportation], 11.71%
+[New York City Police Department], 10.56%
+```
+2.The top 3 Borough are:
+```
+[BROOKLYN], 29.53%
+[BRONX], 23.18%
+[QUEENS], 20.50%
+```
+3.The top 2 complaint types are:
+```
+[HEATING], 34.00%
+[PLUMBING], 5.92%
+```
 It tells us the main problem at that time in New York is Heating.
 
 #### High-confidence association rules

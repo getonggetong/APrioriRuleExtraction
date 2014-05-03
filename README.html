@@ -138,7 +138,6 @@ https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-
 <p>The data set is about service requests in New York, and days between the Nov. 27th, 2013 and Dec. 1st, 2014 are interesting because many people from all over the world would visit New York, and people are more likely to go out for shopping. </p>
 <p>We expected to derive some interesting rules from the dataset, e.g., what's the main complain problem in New York at that time, the Agency for dealing with this problem, the location distribution of the problem.</p>
 <h3 id="how-to-run">How to run</h3>
-<p>==============</p>
 <pre><code>&gt; chmod +x run.sh [optional]
 &gt; ./run.sh -o output -s min_sup -c min_conf -d dataset 
 
@@ -162,7 +161,6 @@ optional arguments:
 <p>In default, the program will execute our INTEGRATED-DATASET.csv with min_support=0.2, min_confidence=0.8 and the result will be list in the terminal.</p>
 <p>If you want to change to other dataset, put the dataset in the <strong>data</strong> folder and specificy the argument in the command list.</p>
 <h3 id="internal-design">Internal Design</h3>
-<p>==================</p>
 <p>Internally, we implemented the original algorithm desribed in Section 2.1 of the Agrawal and Srikant paper in VLDB 1994 with minor modications. Our pseudocode, similar to section 2.1.1 are given below, here we omit the internal function of <code>apriori-gen</code> and <code>FILTER</code>.</p>
 <p><strong>Pseudocode</strong></p>
 <pre><code>L1 = {large 1-itemsets};
@@ -186,25 +184,23 @@ while(Answer.length &gt;= k-1)
 <h3 id="derived-interesting-rules">Derived interesting rules</h3>
 <p>From the example-run.txt, we conclude that:</p>
 <h4 id="frequent-itemsets">Frequent itemsets</h4>
-<ol>
-<li>
-<p>The top 3 frequent agencies are:
-..1. [Department of Housing Preservation and Development], 54.14%
-..2. [Department of Transportation], 11.71%
-..3. [New York City Police Department], 10.56%</p>
-</li>
-<li>
-<p>The top 3 Borough are 
-..1. [BROOKLYN], 29.53%
-..2. [BRONX], 23.18%
-..3. [QUEENS], 20.50%</p>
-</li>
-<li>
-<p>The top 2 complaint types are:
-..1. [HEATING], 34.00%
-..2. [PLUMBING], 5.92%</p>
-</li>
-</ol>
+<p>1.The top 3 frequent agencies are:</p>
+<pre><code>[Department of Housing Preservation and Development], 54.14%
+[Department of Transportation], 11.71%
+[New York City Police Department], 10.56%
+</code></pre>
+
+<p>2.The top 3 Borough are:</p>
+<pre><code>[BROOKLYN], 29.53%
+[BRONX], 23.18%
+[QUEENS], 20.50%
+</code></pre>
+
+<p>3.The top 2 complaint types are:</p>
+<pre><code>[HEATING], 34.00%
+[PLUMBING], 5.92%
+</code></pre>
+
 <p>It tells us the main problem at that time in New York is Heating.</p>
 <h4 id="high-confidence-association-rules">High-confidence association rules</h4>
 <p>Many association rules are listed in the example-runs.txt(in order to get more interesting rules, we make the min_sup = 0.03 and min_conf = 0.3), we list some of interesting association rules:</p>
