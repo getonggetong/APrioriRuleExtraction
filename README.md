@@ -107,31 +107,31 @@ It tells us the main problem at that time in New York is Heating.
 
 #### High-confidence association rules
 Many association rules are listed in the example-runs.txt(in order to get more interesting rules, we make the min_sup = 0.03 and min_conf = 0.3), we list some of interesting association rules:
-
+```
   Traffic Signal Condition] => [Department of Transportation] (Conf: 100.00%, Supp: 4.14%)
-
+```
 It tells us any complaint about traffic signal condition should tell the Department of Transportation
-
+```
   [No Access] => [New York City Police Department] (Conf: 100.00%, Supp: 3.40%)
   [Blocked Driveway] => [No Access] (Conf: 76.84%, Supp: 3.40%)
-
+```
 It tell us complain about road condition should ask New York City Police Department
-
+```
   [HEAT, HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 33.91%)
-
+```
 It tells us any heat problem should ask about Department of Housing Preservation and Development. 
-
+```
   [BRONX] => [HEATING] (Conf: 53.76%, Supp: 12.46%)
   [BRONX] => [HEAT] (Conf: 53.58%, Supp: 12.42%)
   [HEATING] => [BRONX] (Conf: 36.66%, Supp: 12.46%)
   [HEAT] => [BRONX] (Conf: 36.63%, Supp: 12.42%)
   [HEAT, HEATING] => [BRONX] (Conf: 36.63%, Supp: 12.42%)
-
+```
 These rules tell us the area of Bronx will be more likely casuing people to get heat.
-  
+```  
   [New York City Police Department] => [BROOKLYN] (Conf: 33.59%, Supp: 3.55%)
   [New York City Police Department] => [QUEENS] (Conf: 32.48%, Supp: 3.43%)
-
+```
 These rules tell us Brooklyn and Queens are much likely to have public safety problems than Manhattan
 
 ###Additional 

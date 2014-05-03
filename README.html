@@ -125,13 +125,13 @@ body{font-size:16px;}
 <p>Yi Wang (yw2580)</p>
 <h2 id="files-hierachy">Files Hierachy</h2>
 <p><img alt="Files" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/FILES.png" /></p>
-<h4 id="a-which-nyc-open-data-data-set-s-you-used-to-generate-the-integrated-dataset-file">(a) Which NYC Open Data data set(s) you used to generate the INTEGRATED-DATASET file;</h4>
+<h4 id="a-which-nyc-open-data-data-set-s-you-used-to-generate-the-integrated-dataset-file">(a) Which NYC Open Data data set(s) you used to generate the INTEGRATED-DATASET file?</h4>
 <p>311 Service Requests from 2010 to Present
 All 311 Service Requests from 2010 to present. This information is automatically updated daily.</p>
 <p>Row number: 16272</p>
 <p>URL:
 https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9?</p>
-<h4 id="b-what-high-level-procedure-you-used-to-map-the-original-nyc-open-data-data-set-s-into-your-integrated-dataset-file-the-explanation-should-be-detailed-enough-to-allow-us-to-recreate-your-integrated-dataset-file-exactly-from-scratch-from-the-nyc-open-data-site">(b) What (high- level) procedure you used to map the original NYC Open Data data set(s) into your INTEGRATED-DATASET file. The explanation should be detailed enough to allow us to recreate your INTEGRATED-DATASET file exactly from scratch from the NYC Open Data site.</h4>
+<h4 id="b-what-high-level-procedure-you-used-to-map-the-original-nyc-open-data-data-set-s-into-your-integrated-dataset-file">(b) What (high- level) procedure you used to map the original NYC Open Data data set(s) into your INTEGRATED-DATASET file?</h4>
 <p>We filter the original large data set by restricting the "Created Date" between two days before black friday last year (Nov. 27th, 2013) to the Dec. 1st, 2013.</p>
 <p>In addition, we delete the columns that look like containing useless information, e.g., "unspecified", "N\A. The final columns left are "Agency Name", "Complaint Type", "Descriptor", "Incident Zip", "City", "Community", "Borough".</p>
 <h4 id="c-what-makes-your-choice-of-integrated-dataset-file-interesting-in-other-words-justify-your-choice-of-nyc-open-data-data-set-s">(c) What makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)).</h4>
@@ -207,21 +207,31 @@ while(Answer.length &gt;= k-1)
 <p>It tells us the main problem at that time in New York is Heating.</p>
 <h4 id="high-confidence-association-rules">High-confidence association rules</h4>
 <p>Many association rules are listed in the example-runs.txt(in order to get more interesting rules, we make the min_sup = 0.03 and min_conf = 0.3), we list some of interesting association rules:</p>
-<p>Traffic Signal Condition] =&gt; [Department of Transportation] (Conf: 100.00%, Supp: 4.14%)</p>
+<pre><code>  Traffic Signal Condition] =&gt; [Department of Transportation] (Conf: 100.00%, Supp: 4.14%)
+</code></pre>
+
 <p>It tells us any complaint about traffic signal condition should tell the Department of Transportation</p>
-<p>[No Access] =&gt; [New York City Police Department] (Conf: 100.00%, Supp: 3.40%)
-  [Blocked Driveway] =&gt; [No Access] (Conf: 76.84%, Supp: 3.40%)</p>
+<pre><code>  [No Access] =&gt; [New York City Police Department] (Conf: 100.00%, Supp: 3.40%)
+  [Blocked Driveway] =&gt; [No Access] (Conf: 76.84%, Supp: 3.40%)
+</code></pre>
+
 <p>It tell us complain about road condition should ask New York City Police Department</p>
-<p>[HEAT, HEATING] =&gt; [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 33.91%)</p>
+<pre><code>  [HEAT, HEATING] =&gt; [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 33.91%)
+</code></pre>
+
 <p>It tells us any heat problem should ask about Department of Housing Preservation and Development. </p>
-<p>[BRONX] =&gt; [HEATING] (Conf: 53.76%, Supp: 12.46%)
+<pre><code>  [BRONX] =&gt; [HEATING] (Conf: 53.76%, Supp: 12.46%)
   [BRONX] =&gt; [HEAT] (Conf: 53.58%, Supp: 12.42%)
   [HEATING] =&gt; [BRONX] (Conf: 36.66%, Supp: 12.46%)
   [HEAT] =&gt; [BRONX] (Conf: 36.63%, Supp: 12.42%)
-  [HEAT, HEATING] =&gt; [BRONX] (Conf: 36.63%, Supp: 12.42%)</p>
+  [HEAT, HEATING] =&gt; [BRONX] (Conf: 36.63%, Supp: 12.42%)
+</code></pre>
+
 <p>These rules tell us the area of Bronx will be more likely casuing people to get heat.</p>
-<p>[New York City Police Department] =&gt; [BROOKLYN] (Conf: 33.59%, Supp: 3.55%)
-  [New York City Police Department] =&gt; [QUEENS] (Conf: 32.48%, Supp: 3.43%)</p>
+<pre><code>  [New York City Police Department] =&gt; [BROOKLYN] (Conf: 33.59%, Supp: 3.55%)
+  [New York City Police Department] =&gt; [QUEENS] (Conf: 32.48%, Supp: 3.43%)
+</code></pre>
+
 <p>These rules tell us Brooklyn and Queens are much likely to have public safety problems than Manhattan</p>
 <h3 id="additional">Additional</h3>
 <p>Because we use inverse words list data structure, in which the key pairs are combined words splited by ";". If running datasets with ";" inside keywords, it might cause error.</p></body></html>
