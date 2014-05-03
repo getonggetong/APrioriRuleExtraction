@@ -124,10 +124,56 @@ body{font-size:16px;}
 <p>Tong Ge (tg2473)</p>
 <p>Yi Wang (yw2580)</p>
 <h2 id="files-hierachy">Files Hierachy</h2>
+<p><img alt="Files" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/FILES.png" /></p>
 <h4 id="a-which-nyc-open-data-data-set-s-you-used-to-generate-the-integrated-dataset-file">(a) Which NYC Open Data data set(s) you used to generate the INTEGRATED-DATASET file;</h4>
-<p>Dataset:
+<p>NYC City Hall Library Publications
+"Official publications submitted by city agencies in electronic format to the City Hall Library, also available at http://nyc.gov/html/records/html/govpub/home.shtml "</p>
+<p>Row number: 4929</p>
+<p>URL:
 https://data.cityofnewyork.us/Recreation/NYC-City-Hall-Library-Publications/ei8e-zggc</p>
 <h4 id="b-what-high-level-procedure-you-used-to-map-the-original-nyc-open-data-data-set-s-into-your-integrated-dataset-file-the-explanation-should-be-detailed-enough-to-allow-us-to-recreate-your-integrated-dataset-file-exactly-from-scratch-from-the-nyc-open-data-site">(b) What (high- level) procedure you used to map the original NYC Open Data data set(s) into your INTEGRATED-DATASET file. The explanation should be detailed enough to allow us to recreate your INTEGRATED-DATASET file exactly from scratch from the NYC Open Data site.</h4>
 <p>Nothing</p>
-<h4 id="c-what-makes-your-choice-of-integrated-dataset-file-interesting-in-other-words-justify-your-choice-of-nyc-open-data-data-set-s">(c) what makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)).</h4>
-<p>You must explain in the README file precisely what variation(s) you have implemented and why</p></body></html>
+<h4 id="c-what-makes-your-choice-of-integrated-dataset-file-interesting-in-other-words-justify-your-choice-of-nyc-open-data-data-set-s">(c) What makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)).</h4>
+<h3 id="how-to-run">How to run</h3>
+<pre><code>&gt; cd src
+&gt; ./run.sh -o output -s min_sup -c min_conf -d dataset 
+
+usage: Main.py [-h] [-S MIN_SUP] [-C MIN_CONF] [-D CSVDATA] [-O OUTPUT]
+
+&lt;Usage&gt; 
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -S MIN_SUP, -s MIN_SUP
+                        &lt;min_support&gt;
+  -C MIN_CONF, -c MIN_CONF
+                        &lt;min_confidence&gt;
+  -D CSVDATA, -d CSVDATA
+                        &lt;dataset file name&gt;
+  -O OUTPUT, -o OUTPUT  &lt;stdout or file&gt;
+</code></pre>
+
+<p>e.g., 
+<img alt="example" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/example.png" /></p>
+<p>In default, the program will execute our INTEGRATED-DATASET.csv with min_support=0.2, min_confidence=0.8 and the result will be list in the terminal.</p>
+<h3 id="internal-design">Internal Design</h3>
+<p>You must explain in the README file precisely what variation(s)you have implemented and why</p>
+<p>Internally, we implemented the algorithm desribed in Section 2.1 of the Agrawal and Srikant paper in VLDB 1994 with minor modications. Our pseudocode, similar to section 2.1.1 are given below, here we omit the internal function of <code>apriori-gen</code> and <code>FILTER</code>.</p>
+<p><strong>Pseudocode</strong></p>
+<pre><code>L1 = {large 1-itemsets};
+Answer[0] = L1
+k=2;
+while(Answer.length &gt;= k-1)
+{
+    Lk_1 = Answer[k-2]; 
+    Ck = apriori-gen(L);
+    Lk = FILTER(Ck);
+    if(Lk!=NULL)
+    {
+        Answer.append(Lk);
+    }
+}
+</code></pre>
+
+<p>In particular, instead of scanning transcations over and over again in <code>apriori-gen</code> procedure. We always maintain inverse words list data structure, in which we place the words or words sequences as key, their corresponding apperance transcations as value. So that we only have to compare, intersect, merge the <strong>transaction lists</strong> to performance certain operations. e.g., the sample inverse words list:</p>
+<p><img alt="sample" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/sample.png" /></p></body></html>

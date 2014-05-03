@@ -5,9 +5,9 @@ num_vars=$#
 if [ $num_vars -eq 0 ]
 
 then
-	python Main.py
+	python src/main.py
 
 else
-	python Main.py $@
+	python src/main.py $@
 	
 fi
