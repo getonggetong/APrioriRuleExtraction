@@ -1,4 +1,7 @@
-==Frequent itemsets (min_sup=1.50%)[00], 36.7691%
+ ----------------------------------------------------------------------------------------------------
+|                                 Frequent itemsets (min_sup = 1.50%)                                |
+ ----------------------------------------------------------------------------------------------------
+[00], 36.7691%
 [DEPT OF HEALTH/MENTAL HYGIENE], 23.3273%
 [DEPT OF ENVIRONMENT PROTECTION], 17.9626%
 [01], 17.6010%
@@ -91,7 +94,10 @@
 [04,DEPT OF INFO TECH & TELECOMM], 1.5069%
 [PRINCIPAL ADMINISTRATIVE ASSOC], 1.5069%
 
-==High-confidence association rules (min_conf=80.00%)[Bureau of Tech Deve and Syst] => [FIRE DEPARTMENT] (Conf: 100.0000%, Supp: 1.6275%)
+ ----------------------------------------------------------------------------------------------------
+|                        High-confidence association rules (min_conf = 80.00%)                       |
+ ----------------------------------------------------------------------------------------------------
+[Bureau of Tech Deve and Syst] => [FIRE DEPARTMENT] (Conf: 100.0000%, Supp: 1.6275%)
 [SUMMER COLLEGE INTERN] => [00] (Conf: 100.0000%, Supp: 2.2905%)
 [FINANCIAL INFO SVCS AGENCY, M1] => [COMPUTER SYSTEMS MANAGER] (Conf: 100.0000%, Supp: 1.6275%)
 [COMMUNITY ASSOCIATE, CONSUMER AFFAIRS] => [00] (Conf: 100.0000%, Supp: 1.8686%)

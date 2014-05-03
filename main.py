@@ -135,6 +135,7 @@ def main():
     global csvFileName
     global min_sup
     global numberRecords
+    global output
     #open CSV file
     file = open(csvFileName,'r')
     #read the file and build a 1-element-key dictionary with value be the number of appearance
@@ -151,12 +152,15 @@ def main():
     aprioriAlg()
 
     prevStdout = sys.stdout
-    output = open('output.txt','w')
+    # Change the output
     sys.stdout = output
 
+    line = ' ----------------------------------------------------------------------------------------------------\n'
     # Output the result
-    sys.stdout.write('==Frequent itemsets (min_sup=%.2f%%)' % (min_sup*100))
-    sys.stdout.flush()
+    sys.stdout.write(line)
+    sys.stdout.write('|                                 Frequent itemsets (min_sup = %.2f%%)                                |\n'% (min_sup*100))
+    sys.stdout.write(line)
+
 
     freqSet = {}
     for Lk in LList:
@@ -165,17 +169,17 @@ def main():
 
     sorted_freqSet = sorted(freqSet.iteritems(),key = operator.itemgetter(1),reverse=True)
     for freqItem in sorted_freqSet:
-    	sys.stdout.write('[%s], %.4f%%\n' % (','.join(freqItem[0].split(';')), float(freqItem[1])/numberRecords * 100))
+    	sys.stdout.write('[%s], %.2f%%\n' % (','.join(freqItem[0].split(';')), float(freqItem[1])/numberRecords * 100))
 
     print
 
-    sys.stdout.write('==High-confidence association rules (min_conf=%.2f%%)' % (min_conf * 100))
-    sys.stdout.flush()
+    sys.stdout.write(line)
+    sys.stdout.write('|                        High-confidence association rules (min_conf = %.2f%%)                       |\n' % (min_conf * 100))
 	# From LList to generate the association 
+    sys.stdout.write(line)
     Association_Rule = Rule_gen()
 
     # Print the association rule
-
     sorted_rule = {}
     for RULE in Association_Rule.keys():
     	sorted_rule[RULE] = Association_Rule[RULE][0]
@@ -188,7 +192,7 @@ def main():
     	RHS = RuleName[1]
     	conf = pair[1]
     	support = Association_Rule[pair[0]][1]
-    	sys.stdout.write('[%s] => [%s] (Conf: %.4f%%, Supp: %.4f%%)\n' % (LHS, RHS, conf*100, support*100))
+    	sys.stdout.write('[%s] => [%s] (Conf: %.2f%%, Supp: %.2f%%)\n' % (LHS, RHS, conf*100, support*100))
 
     output.close()
     sys.stdout = prevStdout
@@ -196,22 +200,28 @@ def main():
 # Global variable, stdinput
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='<Usage> ./run.sh -sup min_sup -conf min_conf -data dataset')
-	parser.add_argument('-sup',dest='min_sup',help="<min_support>")
-	parser.add_argument('-conf',dest='min_conf',help="<min_confidence>")
-	parser.add_argument('-data',dest='csvdata',help="<dataset file name>")
+	parser.add_argument('-S','-s',dest='min_sup',help="<min_support>")
+	parser.add_argument('-C','-c',dest='min_conf',help="<min_confidence>")
+	parser.add_argument('-D','-d',dest='csvdata',help="<dataset file name>")
+	parser.add_argument('-O','-o',dest='output',help = "<stdout or file>")
 	args = parser.parse_args(sys.argv[1:])
 
 	# Global variables
 	numberRecords = 0
 	LList = []	#list of L1,L2,...,Lk
 	# csvFileName = "INTEGRATED-DATASET.csv"
-	csvFileName = "NYC_Jobs.csv"
-	min_sup = 0.015
+	csvFileName = "INTEGRATED-DATASET.csv"
+	min_sup = 0.2
 	min_conf = 0.8
+	output = sys.stdout
 	if(args.min_sup!=None):
 		min_sup = float(args.min_sup)
 	if(args.min_conf!=None):
 		min_conf = float(args.min_conf)
 	if(args.csvdata!=None):
 		csvFileName = args.csvdata
+	if(args.output!=None):
+		# By default on stdout
+		output = open(args.output,'w')
+
 	main()
