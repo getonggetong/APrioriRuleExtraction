@@ -1,0 +1,230 @@
+ ----------------------------------------------------------------------------------------------------
+|                                 Frequent itemsets (min_sup = 3.00%)                               |
+ ----------------------------------------------------------------------------------------------------
+[Department of Housing Preservation and Development], 54.14%
+[HEATING], 34.00%
+[Department of Housing Preservation and Development, HEATING], 34.00%
+[Department of Housing Preservation and Development, HEAT, HEATING], 33.91%
+[Department of Housing Preservation and Development, HEAT], 33.91%
+[HEAT, HEATING], 33.91%
+[HEAT], 33.91%
+[BROOKLYN], 29.53%
+[BRONX], 23.18%
+[QUEENS], 20.50%
+[MANHATTAN], 20.50%
+[NEW YORK], 19.85%
+[MANHATTAN, NEW YORK], 19.85%
+[BRONX, Department of Housing Preservation and Development], 17.65%
+[BROOKLYN, Department of Housing Preservation and Development], 16.48%
+[BRONX, HEATING], 12.46%
+[BRONX, Department of Housing Preservation and Development, HEATING], 12.46%
+[BRONX, Department of Housing Preservation and Development, HEAT], 12.42%
+[BRONX, HEAT], 12.42%
+[BRONX, HEAT, HEATING], 12.42%
+[BRONX, Department of Housing Preservation and Development, HEAT, HEATING], 12.42%
+[Department of Transportation], 11.71%
+[Department of Housing Preservation and Development, MANHATTAN, NEW YORK], 11.64%
+[Department of Housing Preservation and Development, NEW YORK], 11.64%
+[Department of Housing Preservation and Development, MANHATTAN], 11.64%
+[New York City Police Department], 10.56%
+[BROOKLYN, Department of Housing Preservation and Development, HEATING], 9.26%
+[BROOKLYN, HEATING], 9.26%
+[BROOKLYN, Department of Housing Preservation and Development, HEAT], 9.24%
+[BROOKLYN, Department of Housing Preservation and Development, HEAT, HEATING], 9.24%
+[BROOKLYN, HEAT], 9.24%
+[BROOKLYN, HEAT, HEATING], 9.24%
+[HEATING, MANHATTAN, NEW YORK], 7.86%
+[HEATING, MANHATTAN], 7.86%
+[Department of Housing Preservation and Development, HEATING, NEW YORK], 7.86%
+[HEATING, NEW YORK], 7.86%
+[Department of Housing Preservation and Development, HEATING, MANHATTAN, NEW YORK], 7.86%
+[Department of Housing Preservation and Development, HEATING, MANHATTAN], 7.86%
+[HEAT, HEATING, NEW YORK], 7.85%
+[Department of Housing Preservation and Development, HEAT, MANHATTAN, NEW YORK], 7.85%
+[Department of Housing Preservation and Development, HEAT, HEATING, MANHATTAN], 7.85%
+[Department of Housing Preservation and Development, HEAT, MANHATTAN], 7.85%
+[HEAT, MANHATTAN], 7.85%
+[HEAT, HEATING, MANHATTAN], 7.85%
+[Department of Housing Preservation and Development, HEAT, HEATING, MANHATTAN, NEW YORK], 7.85%
+[HEAT, MANHATTAN, NEW YORK], 7.85%
+[HEAT, HEATING, MANHATTAN, NEW YORK], 7.85%
+[Department of Housing Preservation and Development, HEAT, HEATING, NEW YORK], 7.85%
+[Department of Housing Preservation and Development, HEAT, NEW YORK], 7.85%
+[HEAT, NEW YORK], 7.85%
+[Department of Housing Preservation and Development, QUEENS], 7.66%
+[PLUMBING], 5.92%
+[Department of Housing Preservation and Development, PLUMBING], 5.92%
+[Department of Environmental Protection], 5.67%
+[GENERAL CONSTRUCTION], 5.22%
+[Department of Housing Preservation and Development, GENERAL CONSTRUCTION], 5.22%
+[Blocked Driveway, New York City Police Department], 4.43%
+[Blocked Driveway], 4.43%
+[Department of Housing Preservation and Development, HEATING, QUEENS], 4.15%
+[HEATING, QUEENS], 4.15%
+[Department of Transportation, Traffic Signal Condition], 4.14%
+[Traffic Signal Condition], 4.14%
+[Department of Housing Preservation and Development, HEAT, QUEENS], 4.14%
+[HEAT, QUEENS], 4.14%
+[Department of Housing Preservation and Development, HEAT, HEATING, QUEENS], 4.14%
+[HEAT, HEATING, QUEENS], 4.14%
+[12 MANHATTAN], 3.79%
+[12 MANHATTAN, MANHATTAN], 3.79%
+[12 MANHATTAN, NEW YORK], 3.79%
+[12 MANHATTAN, MANHATTAN, NEW YORK], 3.79%
+[BROOKLYN, Department of Transportation], 3.74%
+[BROOKLYN, New York City Police Department], 3.55%
+[PAINT - PLASTER], 3.52%
+[Department of Housing Preservation and Development, PAINT - PLASTER], 3.52%
+[New York City Police Department, QUEENS], 3.43%
+[Blocked Driveway, New York City Police Department, No Access], 3.40%
+[Blocked Driveway, No Access], 3.40%
+[No Access], 3.40%
+[New York City Police Department, No Access], 3.40%
+[Department of Buildings], 3.34%
+[0 Unspecified], 3.26%
+[Unspecified], 3.26%
+[0 Unspecified, Unspecified], 3.26%
+[12 MANHATTAN, Department of Housing Preservation and Development, MANHATTAN, NEW YORK], 3.13%
+[12 MANHATTAN, Department of Housing Preservation and Development, MANHATTAN], 3.13%
+[12 MANHATTAN, Department of Housing Preservation and Development], 3.13%
+[12 MANHATTAN, Department of Housing Preservation and Development, NEW YORK], 3.13%
+[Department of Transportation, QUEENS], 3.09%
+[STATEN ISLAND], 3.05%
+
+ ----------------------------------------------------------------------------------------------------
+|                        High-confidence association rules (min_conf = 30.00%)                       |
+ ----------------------------------------------------------------------------------------------------
+[Traffic Signal Condition] => [Department of Transportation] (Conf: 100.00%, Supp: 4.14%)
+[HEAT, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 7.85%)
+[No Access] => [New York City Police Department] (Conf: 100.00%, Supp: 3.40%)
+[Department of Housing Preservation and Development, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 11.64%)
+[BRONX, HEAT] => [HEATING] (Conf: 100.00%, Supp: 12.42%)
+[BROOKLYN, HEAT, HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 9.24%)
+[PLUMBING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 5.92%)
+[BROOKLYN, Department of Housing Preservation and Development, HEAT] => [HEATING] (Conf: 100.00%, Supp: 9.24%)
+[HEAT, HEATING, MANHATTAN] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.85%)
+[Department of Housing Preservation and Development, HEAT] => [HEATING] (Conf: 100.00%, Supp: 33.91%)
+[Department of Housing Preservation and Development, HEAT, QUEENS] => [HEATING] (Conf: 100.00%, Supp: 4.14%)
+[HEAT, MANHATTAN, NEW YORK] => [HEATING] (Conf: 100.00%, Supp: 7.85%)
+[HEATING, QUEENS] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 4.15%)
+[HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 34.00%)
+[Department of Housing Preservation and Development, HEAT, HEATING, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 7.85%)
+[HEATING, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 7.86%)
+[HEAT, HEATING, QUEENS] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 4.14%)
+[Blocked Driveway] => [New York City Police Department] (Conf: 100.00%, Supp: 4.43%)
+[Department of Housing Preservation and Development, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 11.64%)
+[Department of Housing Preservation and Development, HEAT, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 7.85%)
+[No Access] => [Blocked Driveway] (Conf: 100.00%, Supp: 3.40%)
+[12 MANHATTAN, Department of Housing Preservation and Development, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 3.13%)
+[12 MANHATTAN, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 3.79%)
+[HEAT, MANHATTAN] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.85%)
+[BROOKLYN, HEAT] => [HEATING] (Conf: 100.00%, Supp: 9.24%)
+[BRONX, HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 12.46%)
+[HEAT, QUEENS] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 4.14%)
+[BROOKLYN, HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 9.26%)
+[HEAT, HEATING, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 7.85%)
+[PAINT - PLASTER] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 3.52%)
+[HEAT, HEATING, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 7.85%)
+[Unspecified] => [0 Unspecified] (Conf: 100.00%, Supp: 3.26%)
+[HEATING, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.86%)
+[Department of Housing Preservation and Development, HEAT, NEW YORK] => [HEATING] (Conf: 100.00%, Supp: 7.85%)
+[HEATING, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 7.86%)
+[HEAT, QUEENS] => [HEATING] (Conf: 100.00%, Supp: 4.14%)
+[Department of Housing Preservation and Development, HEAT, HEATING, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 7.85%)
+[Department of Housing Preservation and Development, HEAT, MANHATTAN] => [HEATING] (Conf: 100.00%, Supp: 7.85%)
+[12 MANHATTAN, Department of Housing Preservation and Development, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 3.13%)
+[12 MANHATTAN, Department of Housing Preservation and Development] => [NEW YORK] (Conf: 100.00%, Supp: 3.13%)
+[BRONX, HEAT] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 12.42%)
+[HEAT, HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 33.91%)
+[BRONX, HEAT, HEATING] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 12.42%)
+[HEAT, MANHATTAN, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.85%)
+[HEAT] => [HEATING] (Conf: 100.00%, Supp: 33.91%)
+[Department of Housing Preservation and Development, HEATING, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 7.86%)
+[NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 19.85%)
+[HEATING, MANHATTAN, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.86%)
+[HEAT, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 7.85%)
+[12 MANHATTAN, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 3.79%)
+[HEAT, HEATING, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.85%)
+[HEAT, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.85%)
+[0 Unspecified] => [Unspecified] (Conf: 100.00%, Supp: 3.26%)
+[BROOKLYN, HEAT] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 9.24%)
+[GENERAL CONSTRUCTION] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 5.22%)
+[12 MANHATTAN] => [MANHATTAN] (Conf: 100.00%, Supp: 3.79%)
+[12 MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 3.79%)
+[Department of Housing Preservation and Development, HEAT, MANHATTAN, NEW YORK] => [HEATING] (Conf: 100.00%, Supp: 7.85%)
+[12 MANHATTAN, Department of Housing Preservation and Development] => [MANHATTAN] (Conf: 100.00%, Supp: 3.13%)
+[HEAT, MANHATTAN] => [HEATING] (Conf: 100.00%, Supp: 7.85%)
+[Department of Housing Preservation and Development, HEATING, NEW YORK] => [MANHATTAN] (Conf: 100.00%, Supp: 7.86%)
+[HEAT] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 33.91%)
+[New York City Police Department, No Access] => [Blocked Driveway] (Conf: 100.00%, Supp: 3.40%)
+[BRONX, Department of Housing Preservation and Development, HEAT] => [HEATING] (Conf: 100.00%, Supp: 12.42%)
+[HEAT, NEW YORK] => [HEATING] (Conf: 100.00%, Supp: 7.85%)
+[HEATING, MANHATTAN] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.86%)
+[HEAT, HEATING, MANHATTAN, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 100.00%, Supp: 7.85%)
+[Department of Housing Preservation and Development, HEAT, MANHATTAN] => [NEW YORK] (Conf: 100.00%, Supp: 7.85%)
+[Blocked Driveway, No Access] => [New York City Police Department] (Conf: 100.00%, Supp: 3.40%)
+[Department of Housing Preservation and Development, HEATING, MANHATTAN] => [HEAT] (Conf: 99.92%, Supp: 7.85%)
+[Department of Housing Preservation and Development, HEATING, MANHATTAN, NEW YORK] => [HEAT] (Conf: 99.92%, Supp: 7.85%)
+[Department of Housing Preservation and Development, HEATING, NEW YORK] => [HEAT] (Conf: 99.92%, Supp: 7.85%)
+[HEATING, MANHATTAN] => [HEAT] (Conf: 99.92%, Supp: 7.85%)
+[HEATING, NEW YORK] => [HEAT] (Conf: 99.92%, Supp: 7.85%)
+[HEATING, MANHATTAN, NEW YORK] => [HEAT] (Conf: 99.92%, Supp: 7.85%)
+[BROOKLYN, HEATING] => [HEAT] (Conf: 99.80%, Supp: 9.24%)
+[BROOKLYN, Department of Housing Preservation and Development, HEATING] => [HEAT] (Conf: 99.80%, Supp: 9.24%)
+[HEATING] => [HEAT] (Conf: 99.75%, Supp: 33.91%)
+[Department of Housing Preservation and Development, HEATING] => [HEAT] (Conf: 99.75%, Supp: 33.91%)
+[BRONX, Department of Housing Preservation and Development, HEATING] => [HEAT] (Conf: 99.65%, Supp: 12.42%)
+[BRONX, HEATING] => [HEAT] (Conf: 99.65%, Supp: 12.42%)
+[HEATING, QUEENS] => [HEAT] (Conf: 99.56%, Supp: 4.14%)
+[Department of Housing Preservation and Development, HEATING, QUEENS] => [HEAT] (Conf: 99.56%, Supp: 4.14%)
+[MANHATTAN] => [NEW YORK] (Conf: 96.85%, Supp: 19.85%)
+[12 MANHATTAN, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 82.63%, Supp: 3.13%)
+[12 MANHATTAN, MANHATTAN, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 82.63%, Supp: 3.13%)
+[12 MANHATTAN] => [Department of Housing Preservation and Development] (Conf: 82.63%, Supp: 3.13%)
+[12 MANHATTAN, MANHATTAN] => [Department of Housing Preservation and Development] (Conf: 82.63%, Supp: 3.13%)
+[Blocked Driveway] => [No Access] (Conf: 76.84%, Supp: 3.40%)
+[Blocked Driveway, New York City Police Department] => [No Access] (Conf: 76.84%, Supp: 3.40%)
+[BRONX] => [Department of Housing Preservation and Development] (Conf: 76.14%, Supp: 17.65%)
+[BRONX, Department of Housing Preservation and Development] => [HEATING] (Conf: 70.61%, Supp: 12.46%)
+[BRONX, Department of Housing Preservation and Development] => [HEAT] (Conf: 70.37%, Supp: 12.42%)
+[Department of Housing Preservation and Development, NEW YORK] => [HEATING] (Conf: 67.53%, Supp: 7.86%)
+[Department of Housing Preservation and Development, MANHATTAN] => [HEATING] (Conf: 67.53%, Supp: 7.86%)
+[Department of Housing Preservation and Development, MANHATTAN, NEW YORK] => [HEATING] (Conf: 67.53%, Supp: 7.86%)
+[Department of Housing Preservation and Development, NEW YORK] => [HEAT] (Conf: 67.48%, Supp: 7.85%)
+[Department of Housing Preservation and Development, MANHATTAN] => [HEAT] (Conf: 67.48%, Supp: 7.85%)
+[Department of Housing Preservation and Development, MANHATTAN, NEW YORK] => [HEAT] (Conf: 67.48%, Supp: 7.85%)
+[Department of Housing Preservation and Development] => [HEATING] (Conf: 62.79%, Supp: 34.00%)
+[Department of Housing Preservation and Development] => [HEAT] (Conf: 62.63%, Supp: 33.91%)
+[NEW YORK] => [Department of Housing Preservation and Development] (Conf: 58.64%, Supp: 11.64%)
+[MANHATTAN, NEW YORK] => [Department of Housing Preservation and Development] (Conf: 58.64%, Supp: 11.64%)
+[MANHATTAN] => [Department of Housing Preservation and Development] (Conf: 56.79%, Supp: 11.64%)
+[BROOKLYN, Department of Housing Preservation and Development] => [HEATING] (Conf: 56.19%, Supp: 9.26%)
+[BROOKLYN, Department of Housing Preservation and Development] => [HEAT] (Conf: 56.08%, Supp: 9.24%)
+[BROOKLYN] => [Department of Housing Preservation and Development] (Conf: 55.82%, Supp: 16.48%)
+[Department of Housing Preservation and Development, QUEENS] => [HEATING] (Conf: 54.25%, Supp: 4.15%)
+[Department of Housing Preservation and Development, QUEENS] => [HEAT] (Conf: 54.01%, Supp: 4.14%)
+[BRONX] => [HEATING] (Conf: 53.76%, Supp: 12.46%)
+[BRONX] => [HEAT] (Conf: 53.58%, Supp: 12.42%)
+[New York City Police Department] => [Blocked Driveway] (Conf: 41.97%, Supp: 4.43%)
+[MANHATTAN, NEW YORK] => [HEATING] (Conf: 39.60%, Supp: 7.86%)
+[NEW YORK] => [HEATING] (Conf: 39.60%, Supp: 7.86%)
+[MANHATTAN, NEW YORK] => [HEAT] (Conf: 39.57%, Supp: 7.85%)
+[NEW YORK] => [HEAT] (Conf: 39.57%, Supp: 7.85%)
+[MANHATTAN] => [HEATING] (Conf: 38.35%, Supp: 7.86%)
+[MANHATTAN] => [HEAT] (Conf: 38.32%, Supp: 7.85%)
+[QUEENS] => [Department of Housing Preservation and Development] (Conf: 37.35%, Supp: 7.66%)
+[Department of Housing Preservation and Development, HEATING] => [BRONX] (Conf: 36.66%, Supp: 12.46%)
+[HEATING] => [BRONX] (Conf: 36.66%, Supp: 12.46%)
+[HEAT] => [BRONX] (Conf: 36.63%, Supp: 12.42%)
+[HEAT, HEATING] => [BRONX] (Conf: 36.63%, Supp: 12.42%)
+[Department of Housing Preservation and Development, HEAT, HEATING] => [BRONX] (Conf: 36.63%, Supp: 12.42%)
+[Department of Housing Preservation and Development, HEAT] => [BRONX] (Conf: 36.63%, Supp: 12.42%)
+[Department of Transportation] => [Traffic Signal Condition] (Conf: 35.36%, Supp: 4.14%)
+[New York City Police Department] => [BROOKLYN] (Conf: 33.59%, Supp: 3.55%)
+[Department of Housing Preservation and Development] => [BRONX] (Conf: 32.60%, Supp: 17.65%)
+[New York City Police Department] => [QUEENS] (Conf: 32.48%, Supp: 3.43%)
+[New York City Police Department] => [No Access] (Conf: 32.25%, Supp: 3.40%)
+[Department of Transportation] => [BROOKLYN] (Conf: 31.90%, Supp: 3.74%)
+[BROOKLYN] => [HEATING] (Conf: 31.36%, Supp: 9.26%)
+[BROOKLYN] => [HEAT] (Conf: 31.30%, Supp: 9.24%)
+[Department of Housing Preservation and Development] => [BROOKLYN] (Conf: 30.44%, Supp: 16.48%)
