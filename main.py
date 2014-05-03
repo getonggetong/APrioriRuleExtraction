@@ -69,7 +69,7 @@ def merge(L,oldwords,word):
 	tmpList = L1[word]
 	return list(set(oldList).intersection(set(tmpList))) 
 
-# Apriori gen algorithm
+# A-priori gen algorithm
 # return candidate set
 def Apriori_Gen(L):
 	C = {};
@@ -147,7 +147,6 @@ def main():
         # check if support meets min_sup
         if float(len(dictionary[item])) / numberRecords >= min_sup:
             L1[item] = dictionary[item]
-    #add L1 to the L list
     LList.append(L1)
     aprioriAlg()
 
@@ -156,7 +155,9 @@ def main():
     sys.stdout = output
 
     # Output the result
-    print '==Frequent itemsets (min_sup=', min_sup*100, '%)'
+    sys.stdout.write('==Frequent itemsets (min_sup=%.2f%%)' % (min_sup*100))
+    sys.stdout.flush()
+
     freqSet = {}
     for Lk in LList:
     	for freqItem in Lk:
@@ -164,14 +165,12 @@ def main():
 
     sorted_freqSet = sorted(freqSet.iteritems(),key = operator.itemgetter(1),reverse=True)
     for freqItem in sorted_freqSet:
-    	print '[',
-    	print ','.join(freqItem[0].split(';')),
-    	print '],',
-    	print float(freqItem[1])/numberRecords * 100 , '%' 
+    	sys.stdout.write('[%s], %.4f%%\n' % (','.join(freqItem[0].split(';')), float(freqItem[1])/numberRecords * 100))
 
     print
 
-    print '==High-confidence association rules (min_conf=', min_conf*100,'%)'
+    sys.stdout.write('==High-confidence association rules (min_conf=%.2f%%)' % (min_conf * 100))
+    sys.stdout.flush()
 	# From LList to generate the association 
     Association_Rule = Rule_gen()
 
@@ -185,11 +184,11 @@ def main():
 
     for pair in sorted_rule:
     	RuleName = pair[0].split('=>')
-    	LHS = ','.join(RuleName[0].split(';'))
+    	LHS = ', '.join(RuleName[0].split(';'))
     	RHS = RuleName[1]
     	conf = pair[1]
     	support = Association_Rule[pair[0]][1]
-    	print '[',LHS,']','=>','[',RHS,']','(Conf:',conf*100,'%,','Supp:',support*100,'%)'
+    	sys.stdout.write('[%s] => [%s] (Conf: %.4f%%, Supp: %.4f%%)\n' % (LHS, RHS, conf*100, support*100))
 
     output.close()
     sys.stdout = prevStdout
@@ -205,14 +204,14 @@ if __name__ == "__main__":
 	# Global variables
 	numberRecords = 0
 	LList = []	#list of L1,L2,...,Lk
-	csvFileName = "INTEGRATED-DATASET.csv"
-	min_sup = 0.2
+	# csvFileName = "INTEGRATED-DATASET.csv"
+	csvFileName = "NYC_Jobs.csv"
+	min_sup = 0.015
 	min_conf = 0.8
 	if(args.min_sup!=None):
-		min_sup = args.min_sup
+		min_sup = float(args.min_sup)
 	if(args.min_conf!=None):
-		min_conf = args.min_conf
+		min_conf = float(args.min_conf)
 	if(args.csvdata!=None):
 		csvFileName = args.csvdata
-	
 	main()
