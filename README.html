@@ -139,7 +139,7 @@ https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-
 <p>We expected to derive some interesting rules from the dataset, e.g., what's the main complain problem in New York at that time, the Agency for dealing with this problem, the location distribution of the problem.</p>
 <h3 id="how-to-run">How to run</h3>
 <p>==============</p>
-<pre><code>&gt; cd src
+<pre><code>&gt; chmod +x run.sh [optional]
 &gt; ./run.sh -o output -s min_sup -c min_conf -d dataset 
 
 usage: Main.py [-h] [-S MIN_SUP] [-C MIN_CONF] [-D CSVDATA] [-O OUTPUT]
@@ -160,6 +160,7 @@ optional arguments:
 <p>e.g., 
 <img alt="example" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/example.png" /></p>
 <p>In default, the program will execute our INTEGRATED-DATASET.csv with min_support=0.2, min_confidence=0.8 and the result will be list in the terminal.</p>
+<p>If you want to change to other dataset, put the dataset in the <strong>data</strong> folder and specificy the argument in the command list.</p>
 <h3 id="internal-design">Internal Design</h3>
 <p>==================</p>
 <p>Internally, we implemented the original algorithm desribed in Section 2.1 of the Agrawal and Srikant paper in VLDB 1994 with minor modications. Our pseudocode, similar to section 2.1.1 are given below, here we omit the internal function of <code>apriori-gen</code> and <code>FILTER</code>.</p>
