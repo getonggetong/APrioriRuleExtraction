@@ -124,7 +124,7 @@ body{font-size:16px;}
 <p>Tong Ge (tg2473)</p>
 <p>Yi Wang (yw2580)</p>
 <h2 id="files-hierachy">Files Hierachy</h2>
-<p><img alt="Files" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/FILES.png" /></p>
+<p><img alt="Files" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/yw2580-proj3/img/FILES.png" /></p>
 <h4 id="a-which-nyc-open-data-data-set-s-you-used-to-generate-the-integrated-dataset-file">(a) Which NYC Open Data data set(s) you used to generate the INTEGRATED-DATASET file?</h4>
 <p>311 Service Requests from 2010 to Present
 All 311 Service Requests from 2010 to present. This information is automatically updated daily.</p>
@@ -157,7 +157,7 @@ optional arguments:
 </code></pre>
 
 <p>e.g., 
-<img alt="example" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/example.png" /></p>
+<img alt="example" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/yw2580-proj3/img/example.png" /></p>
 <p>In default, the program will execute our INTEGRATED-DATASET.csv with min_support=0.2, min_confidence=0.8 and the result will be list in the terminal.</p>
 <p>If you want to change to other dataset, put the dataset in the <strong>data</strong> folder and specificy the argument in the command list.</p>
 <h3 id="internal-design">Internal Design</h3>
@@ -179,7 +179,7 @@ while(Answer.length &gt;= k-1)
 </code></pre>
 
 <p>In particular, instead of scanning transcations over and over again in <code>apriori-gen</code> procedure. We always maintain inverse words list data structure, in which we place the words or words sequences as key, their corresponding apperance transcations as value. Thus it's more efficient since we only have to compare, intersect, merge the <strong>transaction lists</strong> to performance certain operations. e.g., the sample inverse words list:</p>
-<p><img alt="sample" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/APrioriRuleExtraction/img/sample.png" /></p>
+<p><img alt="sample" src="file:///Users/wang/Dropbox/Advanced Database System/Advanced Database Project/Project 3/yw2580-proj3/img/sample.png" /></p>
 <p>Moreover, our join procedure in <code>apriori-gen</code> is based on alphabetical order.</p>
 <h3 id="derived-interesting-rules">Derived interesting rules</h3>
 <p>From the example-run.txt, we conclude that:</p>
